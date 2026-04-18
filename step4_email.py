@@ -103,11 +103,9 @@ def send_notification(record: dict) -> bool:
     # ── Connect to Gmail SMTP and send ────────────────────────
     try:
         print(f"[EMAIL] Connecting to Gmail SMTP...")
-        server = smtplib.SMTP("smtp.gmail.com", 587)
-        server.starttls()  # Encrypt the connection
-        server.login(SENDER_EMAIL, APP_PASSWORD)
-        server.sendmail(SENDER_EMAIL, RECEIVER_EMAIL, msg.as_string())
-        server.quit()
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+            server.login(SENDER_EMAIL, APP_PASSWORD)
+            server.sendmail(SENDER_EMAIL, RECEIVER_EMAIL, msg.as_string())
         print(f"[EMAIL] ✅ Email sent to {RECEIVER_EMAIL}")
         return True
 

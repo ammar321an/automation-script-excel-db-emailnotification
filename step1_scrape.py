@@ -9,7 +9,7 @@ import json
 from datetime import datetime
 
 
-def scrape_weather(city: str = "KualaLumpur") -> dict:
+def scrape_weather(city: str = "KualaLumpur, Malaysia") -> dict:
     """
     Scrape current weather for a given city from wttr.in.
     Returns a clean dictionary with the weather data.
@@ -53,6 +53,6 @@ def scrape_weather(city: str = "KualaLumpur") -> dict:
 
 # ── Run this file directly to test ───────────────────────────
 if __name__ == "__main__":
-    data = scrape_weather("KualaLumpur")
+    data = scrape_weather("KualaLumpur, Malaysia")
     print("\n── Weather Data ──")
     print(json.dumps(data, indent=2))
