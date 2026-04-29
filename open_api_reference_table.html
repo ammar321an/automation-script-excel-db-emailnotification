@@ -1,0 +1,377 @@
+
+<h2 class="sr-only">Open API Reference Table for Dyson Training — all APIs, call URLs, automation purpose, and Dyson outcomes</h2>
+
+<style>
+  .wrap { font-family: var(--font-sans); padding: 1rem 0; }
+  .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-secondary); margin: 2rem 0 0.75rem; padding: 0; }
+  .api-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); margin-bottom: 10px; overflow: hidden; }
+  .api-header { display: grid; grid-template-columns: 28px 1fr auto; align-items: center; gap: 10px; padding: 12px 14px 8px; }
+  .api-num { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 500; flex-shrink: 0; }
+  .api-name { font-size: 15px; font-weight: 500; color: var(--color-text-primary); }
+  .api-badge { font-size: 11px; padding: 3px 9px; border-radius: 20px; font-weight: 500; white-space: nowrap; }
+  .api-url { font-family: var(--font-mono); font-size: 11px; color: var(--color-text-secondary); background: var(--color-background-secondary); padding: 6px 14px; border-top: 0.5px solid var(--color-border-tertiary); border-bottom: 0.5px solid var(--color-border-tertiary); overflow-x: auto; white-space: nowrap; }
+  .api-body { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; }
+  .api-col { padding: 10px 14px; border-right: 0.5px solid var(--color-border-tertiary); }
+  .api-col:last-child { border-right: none; }
+  .col-label { font-size: 10px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 5px; }
+  .col-text { font-size: 12px; color: var(--color-text-secondary); line-height: 1.6; }
+  .role-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+  .role-tag { font-size: 10px; padding: 2px 7px; border-radius: 10px; border: 0.5px solid var(--color-border-secondary); color: var(--color-text-secondary); }
+  .freq-badge { font-size: 10px; padding: 2px 8px; border-radius: 10px; }
+
+  .c-blue-bg { background: #E6F1FB; color: #0C447C; }
+  .c-teal-bg { background: #E1F5EE; color: #085041; }
+  .c-amber-bg { background: #FAEEDA; color: #633806; }
+  .c-purple-bg { background: #EEEDFE; color: #3C3489; }
+  .c-coral-bg { background: #FAECE7; color: #712B13; }
+  .c-green-bg { background: #EAF3DE; color: #27500A; }
+  .c-pink-bg { background: #FBEAF0; color: #72243E; }
+  .c-gray-bg { background: #F1EFE8; color: #444441; }
+
+  .freq-live { background: #EAF3DE; color: #3B6D11; }
+  .freq-daily { background: #E6F1FB; color: #185FA5; }
+  .freq-rt { background: #FAEEDA; color: #854F0B; }
+
+  @media (max-width: 600px) {
+    .api-body { grid-template-columns: 1fr; }
+    .api-col { border-right: none; border-bottom: 0.5px solid var(--color-border-tertiary); }
+    .api-col:last-child { border-bottom: none; }
+  }
+</style>
+
+<div class="wrap">
+
+<div class="section-label">General — finance, weather, market & world data</div>
+
+<div class="api-card">
+  <div class="api-header">
+    <div class="api-num c-teal-bg">1</div>
+    <div><div class="api-name">Open-Meteo</div></div>
+    <span class="freq-badge freq-live">live</span>
+  </div>
+  <div class="api-url">https://api.open-meteo.com/v1/forecast?latitude=3.14&longitude=101.69&current_weather=true</div>
+  <div class="api-body">
+    <div class="api-col">
+      <div class="col-label" style="color:#085041;">why automate</div>
+      <div class="col-text">Replace unreliable wttr.in. No rate limits. Get temp, wind, humidity for any coordinate worldwide.</div>
+    </div>
+    <div class="api-col">
+      <div class="col-label" style="color:#085041;">what you achieve</div>
+      <div class="col-text">Build a live weather dashboard. Trigger alerts when conditions change.</div>
+    </div>
+    <div class="api-col">
+      <div class="col-label" style="color:#085041;">Dyson value</div>
+      <div class="col-text">Auto-adjust product testing schedules (fan, purifier, heating) based on ambient conditions at Senai factory.</div>
+    </div>
+  </div>
+</div>
+
+<div class="api-card">
+  <div class="api-header">
+    <div class="api-num c-amber-bg">2</div>
+    <div><div class="api-name">Frankfurter — Forex Rates</div></div>
+    <span class="freq-badge freq-daily">daily</span>
+  </div>
+  <div class="api-url">https://api.frankfurter.app/latest?from=USD&to=MYR,EUR,GBP</div>
+  <div class="api-body">
+    <div class="api-col">
+      <div class="col-label" style="color:#633806;">why automate</div>
+      <div class="col-text">ECB-sourced rates. Zero auth. Fetch historical rates back to 1999. Reliable uptime.</div>
+    </div>
+    <div class="api-col">
+      <div class="col-label" style="color:#633806;">what you achieve</div>
+      <div class="col-text">Daily currency snapshots, automated budget conversion reports, multi-currency cost tracking.</div>
+    </div>
+    <div class="api-col">
+      <div class="col-label" style="color:#633806;">Dyson value</div>
+      <div class="col-text">Auto-convert component costs from CNY/USD to MYR for Malaysia ops. Flag budget overruns when MYR weakens.</div>
+    </div>
+  </div>
+</div>
+
+<div class="api-card">
+  <div class="api-header">
+    <div class="api-num c-blue-bg">3</div>
+    <div><div class="api-name">CoinGecko — Crypto & Market</div></div>
+    <span class="freq-badge freq-live">live</span>
+  </div>
+  <div class="api-url">https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10</div>
+  <div class="api-body">
+    <div class="api-col">
+      <div class="col-label" style="color:#185FA5;">why automate</div>
+      <div class="col-text">Live market cap, price % change, volume. Teach trend parsing with real volatile data.</div>
+    </div>
+    <div class="api-col">
+      <div class="col-label" style="color:#185FA5;">what you achieve</div>
+      <div class="col-text">Market trend tracker. Visualize 24h % changes. Detect anomalies automatically.</div>
+    </div>
+    <div class="api-col">
+      <div class="col-label" style="color:#185FA5;">Dyson value</div>
+      <div class="col-text">Financial risk awareness for procurement teams managing USD-denominated supplier contracts.</div>
+    </div>
+  </div>
+</div>
+
+<div class="api-card">
+  <div class="api-header">
+    <div class="api-num c-gray-bg">4</div>
+    <div><div class="api-name">HackerNews — Tech Stories</div></div>
+    <span class="freq-badge freq-live">live</span>
+  </div>
+  <div class="api-url">https://hacker-news.firebaseio.com/v0/topstories.json</div>
+  <div class="api-body">
+    <div class="api-col">
+      <div class="col-label" style="color:#444441;">why automate</div>
+      <div class="col-text">Unlimited calls. Real trending tech stories. Great for nested API call training (list → detail).</div>
+    </div>
+    <div class="api-col">
+      <div class="col-label" style="color:#444441;">what you achieve</div>
+      <div class="col-text">Daily tech digest builder. Keyword filter (AI, DevOps, robotics). Slack/email auto-summary.</div>
+    </div>
+    <div class="api-col">
+      <div class="col-label" style="color:#444441;">Dyson value</div>
+      <div class="col-text">Auto-brief engineering teams on emerging tech relevant to product R&D each morning.</div>
+    </div>
+  </div>
+</div>
+
+<div class="api-card">
+  <div class="api-header">
+    <div class="api-num c-green-bg">5</div>
+    <div><div class="api-name">RestCountries — Market & Region</div></div>
+    <span class="freq-badge freq-daily">daily</span>
+  </div>
+  <div class="api-url">https://restcountries.com/v3.1/region/asia</div>
+  <div class="api-body">
+    <div class="api-col">
+      <div class="col-label" style="color:#27500A;">why automate</div>
+      <div class="col-text">Population, GDP, currency, timezone per country. Zero auth. Filter by region or code.</div>
+    </div>
+    <div class="api-col">
+      <div class="col-label" style="color:#27500A;">what you achieve</div>
+      <div class="col-text">Regional market snapshot. Identify target markets by GDP + population. Auto-generate country profiles.</div>
+    </div>
+    <div class="api-col">
+      <div class="col-label" style="color:#27500A;">Dyson value</div>
+      <div class="col-text">Market sizing for Southeast Asia product launches (MY, SG, TH, PH, VN). Prioritise expansion by GDP.</div>
+    </div>
+  </div>
+</div>
+
+<div class="section-label">Software engineering — dev tools, code, packages & security</div>
+
+<div class="api-card">
+  <div class="api-header">
+    <div class="api-num c-gray-bg">6</div>
+    <div><div class="api-name">GitHub Search API</div><div class="role-tags"><span class="role-tag">robotics</span><span class="role-tag">devops</span><span class="role-tag">AI engineer</span><span class="role-tag">QA</span></div></div>
+    <span class="freq-badge freq-live">live</span>
+  </div>
+  <div class="api-url">https://api.github.com/search/repositories?q=topic:ros2&sort=stars&order=desc</div>
+  <div class="api-body">
+    <div class="api-col">
+      <div class="col-label" style="color:#444441;">why automate</div>
+      <div class="col-text">60 req/hr free. Search by topic: ros, playwright, mlops, langchain, devops. Stars + last updated = trend signal.</div>
+    </div>
+    <div class="api-col">
+      <div class="col-label" style="color:#444441;">what you achieve</div>
+      <div class="col-text">Weekly report of top repos per role. Detect which tools are gaining traction. Auto-notify team of hot new libs.</div>
+    </div>
+    <div class="api-col">
+      <div class="col-label" style="color:#444441;">Dyson value</div>
+      <div class="col-text">Track open-source robotics (ROS2) and AI repos to benchmark Dyson's internal tooling against industry best practices.</div>
+    </div>
+  </div>
+</div>
+
+<div class="api-card">
+  <div class="api-header">
+    <div class="api-num c-blue-bg">7</div>
+    <div><div class="api-name">StackExchange API</div><div class="role-tags"><span class="role-tag">all roles</span></div></div>
+    <span class="freq-badge freq-daily">daily</span>
+  </div>
+  <div class="api-url">https://api.stackexchange.com/2.3/questions?order=desc&sort=activity&tagged=pytest&site=stackoverflow</div>
+  <div class="api-body">
+    <div class="api-col">
+      <div class="col-label" style="color:#185FA5;">why automate</div>
+      <div class="col-text">300 req/day free. Tag-based Q&A activity = real-time proxy for what engineers are struggling with globally.</div>
+    </div>
+    <div class="api-col">
+      <div class="col-label" style="color:#185FA5;">what you achieve</div>
+      <div class="col-text">Daily pain-point digest per role. Identify knowledge gaps. Build training content from top-voted questions.</div>
+    </div>
+    <div class="api-col">
+      <div class="col-label" style="color:#185FA5;">Dyson value</div>
+      <div class="col-text">Discover recurring problems Dyson engineers face (jenkins, ros, pytest). Use as input for internal training priorities.</div>
+    </div>
+  </div>
+</div>
+
+<div class="api-card">
+  <div class="api-header">
+    <div class="api-num c-teal-bg">8</div>
+    <div><div class="api-name">Docker Hub API</div><div class="role-tags"><span class="role-tag">devops</span><span class="role-tag">software dev</span></div></div>
+    <span class="freq-badge freq-live">live</span>
+  </div>
+  <div class="api-url">https://hub.docker.com/v2/repositories/library/jenkins/</div>
+  <div class="api-body">
+    <div class="api-col">
+      <div class="col-label" style="color:#085041;">why automate</div>
+      <div class="col-text">No auth. Pull counts + last updated on any container image. Reflects real DevOps adoption globally.</div>
+    </div>
+    <div class="api-col">
+      <div class="col-label" style="color:#085041;">what you achieve</div>
+      <div class="col-text">Track which container images are most pulled. Monitor base image freshness. Alert when new versions release.</div>
+    </div>
+    <div class="api-col">
+      <div class="col-label" style="color:#085041;">Dyson value</div>
+      <div class="col-text">Automate CI/CD image version monitoring. Ensure Dyson's Jenkins/Nginx/Python base images are never outdated.</div>
+    </div>
+  </div>
+</div>
+
+<div class="api-card">
+  <div class="api-header">
+    <div class="api-num c-purple-bg">9</div>
+    <div><div class="api-name">Hugging Face API</div><div class="role-tags"><span class="role-tag">AI engineer</span><span class="role-tag">robotics</span></div></div>
+    <span class="freq-badge freq-daily">daily</span>
+  </div>
+  <div class="api-url">https://huggingface.co/api/models?pipeline_tag=object-detection&sort=downloads&limit=10</div>
+  <div class="api-body">
+    <div class="api-col">
+      <div class="col-label" style="color:#3C3489;">why automate</div>
+      <div class="col-text">No auth. Download counts + likes per model. Filter by task (object-detection, robotics, text-generation). Updated daily.</div>
+    </div>
+    <div class="api-col">
+      <div class="col-label" style="color:#3C3489;">what you achieve</div>
+      <div class="col-text">Weekly AI model trend report. Spot which models are rising. Auto-alert when a better model drops for your task.</div>
+    </div>
+    <div class="api-col">
+      <div class="col-label" style="color:#3C3489;">Dyson value</div>
+      <div class="col-text">Monitor YOLO / object detection model updates for Dyson's Insect Digitization and robotics vision pipeline.</div>
+    </div>
+  </div>
+</div>
+
+<div class="api-card">
+  <div class="api-header">
+    <div class="api-num c-coral-bg">10</div>
+    <div><div class="api-name">PyPI Stats API</div><div class="role-tags"><span class="role-tag">QA automation</span><span class="role-tag">AI engineer</span><span class="role-tag">software dev</span></div></div>
+    <span class="freq-badge freq-daily">daily</span>
+  </div>
+  <div class="api-url">https://pypistats.org/api/packages/pytest/recent</div>
+  <div class="api-body">
+    <div class="api-col">
+      <div class="col-label" style="color:#712B13;">why automate</div>
+      <div class="col-text">No auth. Returns last_day, last_week, last_month downloads for any Python package. Swap package name freely.</div>
+    </div>
+    <div class="api-col">
+      <div class="col-label" style="color:#712B13;">what you achieve</div>
+      <div class="col-text">Benchmark tool adoption. Compare pytest vs unittest, playwright vs selenium. Show growth curves over time.</div>
+    </div>
+    <div class="api-col">
+      <div class="col-label" style="color:#712B13;">Dyson value</div>
+      <div class="col-text">Justify tooling decisions with data — e.g. "playwright downloads grew 3x this year" when proposing migration from selenium.</div>
+    </div>
+  </div>
+</div>
+
+<div class="api-card">
+  <div class="api-header">
+    <div class="api-num c-green-bg">11</div>
+    <div><div class="api-name">PyPI Package JSON</div><div class="role-tags"><span class="role-tag">software dev</span><span class="role-tag">AI engineer</span></div></div>
+    <span class="freq-badge freq-live">live</span>
+  </div>
+  <div class="api-url">https://pypi.org/pypi/langchain/json</div>
+  <div class="api-body">
+    <div class="api-col">
+      <div class="col-label" style="color:#27500A;">why automate</div>
+      <div class="col-text">Zero auth. Latest version, release history, dependencies, author, project URLs for any Python package instantly.</div>
+    </div>
+    <div class="api-col">
+      <div class="col-label" style="color:#27500A;">what you achieve</div>
+      <div class="col-text">Auto-check if internal packages are outdated. Build a dependency health dashboard. Detect abandoned packages.</div>
+    </div>
+    <div class="api-col">
+      <div class="col-label" style="color:#27500A;">Dyson value</div>
+      <div class="col-text">Automate Dyson's Python dependency audits across all projects — flag packages not updated in 6+ months.</div>
+    </div>
+  </div>
+</div>
+
+<div class="api-card">
+  <div class="api-header">
+    <div class="api-num c-pink-bg">12</div>
+    <div><div class="api-name">CVE / NVD Security</div><div class="role-tags"><span class="role-tag">devops</span><span class="role-tag">QA automation</span></div></div>
+    <span class="freq-badge freq-daily">daily</span>
+  </div>
+  <div class="api-url">https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=docker&resultsPerPage=5</div>
+  <div class="api-body">
+    <div class="api-col">
+      <div class="col-label" style="color:#72243E;">why automate</div>
+      <div class="col-text">U.S. National Vulnerability Database. Updated daily. Filter by keyword (docker, jenkins, nginx, python).</div>
+    </div>
+    <div class="api-col">
+      <div class="col-label" style="color:#72243E;">what you achieve</div>
+      <div class="col-text">Daily security digest. Auto-alert when a CVE matches your stack. Build a vulnerability watchlist per tool.</div>
+    </div>
+    <div class="api-col">
+      <div class="col-label" style="color:#72243E;">Dyson value</div>
+      <div class="col-text">Protect Dyson's CI/CD pipeline and AWS infra — get instant alerts when CVEs affect tools in production.</div>
+    </div>
+  </div>
+</div>
+
+<div class="api-card">
+  <div class="api-header">
+    <div class="api-num c-blue-bg">13</div>
+    <div><div class="api-name">NPM Registry</div><div class="role-tags"><span class="role-tag">QA automation</span><span class="role-tag">software dev</span></div></div>
+    <span class="freq-badge freq-live">live</span>
+  </div>
+  <div class="api-url">https://api.npmjs.org/downloads/point/last-week/playwright</div>
+  <div class="api-body">
+    <div class="api-col">
+      <div class="col-label" style="color:#185FA5;">why automate</div>
+      <div class="col-text">No auth. Weekly downloads for any JS/TS package. Great pair with PyPI for cross-ecosystem comparison.</div>
+    </div>
+    <div class="api-col">
+      <div class="col-label" style="color:#185FA5;">what you achieve</div>
+      <div class="col-text">Compare Playwright vs Cypress vs Jest weekly trends. Build adoption charts for QA tool selection reports.</div>
+    </div>
+    <div class="api-col">
+      <div class="col-label" style="color:#185FA5;">Dyson value</div>
+      <div class="col-text">Data-backed decision when choosing QA tools for Dyson's frontend test suite — no more guessing which tool wins.</div>
+    </div>
+  </div>
+</div>
+
+<div class="section-label">Bonus — world events, remote jobs & AI model leaderboard</div>
+
+<div class="api-card">
+  <div class="api-header">
+    <div class="api-num c-amber-bg">14</div>
+    <div><div class="api-name">Wikipedia Daily Feed</div></div>
+    <span class="freq-badge freq-daily">daily</span>
+  </div>
+  <div class="api-url">https://en.wikipedia.org/api/rest_v1/feed/featured/2026/04/29</div>
+  <div class="api-body">
+    <div class="api-col"><div class="col-label" style="color:#633806;">why automate</div><div class="col-text">Free. Today's featured article, trending topics, on-this-day events. Dynamic date in URL via Python datetime.</div></div>
+    <div class="api-col"><div class="col-label" style="color:#633806;">what you achieve</div><div class="col-text">Auto-generate daily context briefs. Use as training data for NLP exercises or a daily digest bot.</div></div>
+    <div class="api-col"><div class="col-label" style="color:#633806;">Dyson value</div><div class="col-text">Feed a daily knowledge digest to Dyson engineers — surface relevant tech and science milestones automatically.</div></div>
+  </div>
+</div>
+
+<div class="api-card">
+  <div class="api-header">
+    <div class="api-num c-teal-bg">15</div>
+    <div><div class="api-name">Remotive — Remote Jobs</div><div class="role-tags"><span class="role-tag">all roles</span></div></div>
+    <span class="freq-badge freq-daily">daily</span>
+  </div>
+  <div class="api-url">https://remotive.com/api/remote-jobs?category=software-dev&limit=10</div>
+  <div class="api-body">
+    <div class="api-col"><div class="col-label" style="color:#085041;">why automate</div><div class="col-text">No auth. Filter by category: software-dev, data, devops, qa. Live job market signal updated daily.</div></div>
+    <div class="api-col"><div class="col-label" style="color:#085041;">what you achieve</div><div class="col-text">Track in-demand skills from job postings. Extract required tech stack per role. Spot salary trend patterns.</div></div>
+    <div class="api-col"><div class="col-label" style="color:#085041;">Dyson value</div><div class="col-text">Benchmark what skills Dyson should train — if 80% of DevOps jobs demand Terraform, that's a training priority signal.</div></div>
+  </div>
+</div>
+
+</div>
